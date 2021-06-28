@@ -3,7 +3,8 @@ import {  Tabs, Tab, Button, Menu, MenuItem } from '@material-ui/core'
 import {Link} from 'react-router-dom';
 import useStyles from './styles'
 import logo from '../../../assets/logo.svg'
-
+import Drawer from '../Drawer/Drawer'
+import { menuOptions, routes } from './menuOption_and_routes'
 
 function NavTabs({matches}) {
 
@@ -13,8 +14,8 @@ function NavTabs({matches}) {
     const [open, setOpen] = useState(false);
     const [selectedIndex, setSelectedIndex] = useState(0);
 
-    const handleChange = (e, value)=>{
-        setValue(value)
+    const handleChange = (e, newValue)=>{
+        setValue(newValue)
     }
 
     const handleClick = (e)=>{
@@ -33,80 +34,24 @@ function NavTabs({matches}) {
         setOpen(false); 
     }
 
-    const menuOptions = [
-        {name: "Services", link: "/services"},
-        {name: "Custom Software Development", link: "/customsoftware"},
-        {name: "Mobile App Development", link: "/mobileapps"},
-        {name: "Website Development", link: "/website"}
-    ];
-
     useEffect(()=>{
 
-        switch(window.location.pathname){
-            case '/':
-                if(value !== 0){
-                    setValue(0)
-                }
-                break;
-
-            case '/services':
-                if(value !== 1){
-                    setValue(1)
-                    setSelectedIndex(0)
-                }
-                break;
-
-            case '/customsoftware':
-                if(value !== 1){
-                    setValue(1)
-                    setSelectedIndex(1);
-                }
-                break;
-
-            case '/mobileapps':
-                if(value !== 1){
-                    setValue(1);
-                    setSelectedIndex(2);
-                }
-                break;
-
-            case '/website':
-                if(value !== 1){
-                    setValue(1);
-                    setSelectedIndex(3);
-
-                }
-                break;
-
-            case '/revolution':
-                if(value !== 2){
-                    setValue(2)
-                }
-                break;
-                
-            case '/about':
-                if(value !== 3){
-                    setValue(3)
-                }
-                break;
-
-            case '/contact':
-                if(value !== 4){
-                    setValue(4)
-                }
-                break;
-
-            case '/estimate':
-                if(value !== 5){
-                    setValue(5)
-                }
-                break;
-
-            default: 
-                break;
+        [...menuOptions, ...routes].forEach(route=>{
+            switch(window.location.pathname){
+                case route.link:
+                    if(value !== route.activeIndex){
+                        setValue(route.activeIndex);
+                    }
+                    if(route.selectedIndex && route.selectedIndex !== selectedIndex){
+                        setSelectedIndex(route.selectedIndex)
+                    }
+                    break;
+                default:
+                    break;
+            }
             
-        }
-    },[value])
+        })
+    },[value, menuOptions, routes, selectedIndex])
 
 
     return (
@@ -114,7 +59,7 @@ function NavTabs({matches}) {
             <Button disableRipple component={Link} to='/'className={classes.logoContainer} onClick={()=>setValue(0)} >
                 <img className={classes.image} src={logo} alt="COMPANY LOGO"/>
             </Button>
-            {matches ? null : 
+            {matches ? <Drawer value={value} setValue={setValue}/> : 
             <>
             <Tabs value={value} onChange={handleChange} className={classes.tabContainer}>
                     <Tab 
