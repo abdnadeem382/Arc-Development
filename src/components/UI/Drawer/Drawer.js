@@ -4,7 +4,7 @@ import MenuIcon from '@material-ui/icons/Menu'
 import List from '../List/List'
 import useStyles from './styles'
 
-function Drawer({setValue, value}) {
+function Drawer({setValue, value, routes}) {
     const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
 
     const [openDrawer, setOpenDrawer] = useState(false);
@@ -20,7 +20,7 @@ function Drawer({setValue, value}) {
                 onOpen={()=>setOpenDrawer(true)}
                 classes={{paper: classes.drawer}}
                 >
-                    <List value={value} setOpenDrawer={setOpenDrawer} setValue={setValue}/>
+                    <List routes ={routes} value={value} setOpenDrawer={setOpenDrawer} setValue={setValue}/>
             </SwipeableDrawer>
             <IconButton className={classes.drawerIconContainer} onClick={()=>setOpenDrawer(!openDrawer)} disableRipple>
                 <MenuIcon className={classes.drawerIcon}/>
