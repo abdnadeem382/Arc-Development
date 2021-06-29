@@ -1,8 +1,11 @@
 import React from 'react'
 import useStyles from './styles'
 import footerAdornment from '../../../assets/Footer Adornment.svg'
-import {Grid} from '@material-ui/core'
+import {Grid, Hidden} from '@material-ui/core'
 import {Link} from 'react-router-dom'
+import facebook from '../../../assets/facebook.svg'
+import instagram from '../../../assets/instagram.svg'
+import twitter from '../../../assets/twitter.svg'
 
 function Footer({value, setValue, selectedIndex, setSelectedIndex}) {
 
@@ -10,6 +13,7 @@ function Footer({value, setValue, selectedIndex, setSelectedIndex}) {
 
     return (
        <footer className={classes.footer}>
+           <Hidden mdDown>
            <Grid container justify='center' className={classes.mainContainer}>
                 <Grid item className={classes.gridItem} >
                     <Grid container direction="column" spacing={2}>
@@ -71,7 +75,19 @@ function Footer({value, setValue, selectedIndex, setSelectedIndex}) {
                     </Grid>
                 </Grid>
            </Grid>
+           </Hidden>
            <img className={classes.adornment} src={footerAdornment} alt='black decorative slash'/>
+            <Grid container justify='flex-end' spacing={2} className={classes.socialContainer }>
+                <Grid item component={'a'} href='https://www.facebook.com' rel="noopener noreferrer" target='_blank'>
+                    <img alt='facebook logo' src={facebook} className={classes.icon}/>
+                </Grid>
+                <Grid item component={'a'} href='https://www.twitter.com' rel="noopener noreferrer" target='_blank'>
+                    <img alt='twitter logo' src={twitter} className={classes.icon}/>
+                </Grid>
+                <Grid item component={'a'} href='https://www.instagram.com' rel="noopener noreferrer" target='_blank'>
+                    <img alt='instagram logo' src={instagram} className={classes.icon}/>
+                </Grid>
+            </Grid>
        </footer>     
     )
 }
