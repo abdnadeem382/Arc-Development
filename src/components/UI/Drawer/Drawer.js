@@ -20,7 +20,8 @@ function Drawer({setValue, value, routes}) {
                 onOpen={()=>setOpenDrawer(true)}
                 classes={{paper: classes.drawer}}
                 >
-                    <List routes ={routes} value={value} setOpenDrawer={setOpenDrawer} setValue={setValue}/>
+                <div className={classes.toolbarMargin}></div>
+                <List routes ={routes} value={value} setOpenDrawer={setOpenDrawer} setValue={setValue}/>
             </SwipeableDrawer>
             <IconButton className={classes.drawerIconContainer} onClick={()=>setOpenDrawer(!openDrawer)} disableRipple>
                 <MenuIcon className={classes.drawerIcon}/>

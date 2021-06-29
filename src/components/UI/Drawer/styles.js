@@ -15,6 +15,16 @@ export default makeStyles((theme)=>(
        },
        drawer: {
            backgroundColor: theme.palette.common.blue
-       }
+       },
+       toolbarMargin:{
+        ...theme.mixins.toolbar,
+        marginBottom: '3em',
+        [theme.breakpoints.down('md')]:{
+            marginBottom: '2em'
+        },
+        [theme.breakpoints.down('xs')]:{
+            marginBottom: '1.25em'
+        }
+    },
     }
 ))

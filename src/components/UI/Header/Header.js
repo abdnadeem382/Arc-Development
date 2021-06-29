@@ -18,7 +18,7 @@ function ElevationScroll(props) {
     });
   }
 
-function Header() {
+function Header(props) {
 
     const classes = useStyles();
     const theme = useTheme();
@@ -27,9 +27,9 @@ function Header() {
     return (
         <>
         <ElevationScroll>
-        <AppBar position='fixed' color='primary'>
+        <AppBar position='fixed' color='primary' className={classes.appbar}>
             <Toolbar disableGutters>
-                <Tabs matches={matches}/>
+                <Tabs matches={matches} {...props}/>
                 
             </Toolbar>
         </AppBar>

@@ -11,6 +11,9 @@ export default makeStyles((theme)=>(
             [theme.breakpoints.down('xs')]:{
                 marginBottom: '1.25em'
             }
+        },
+        appbar: {
+            zIndex: theme.zIndex.modal +1
         }
     }
 ))
