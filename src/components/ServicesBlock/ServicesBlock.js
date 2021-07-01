@@ -2,15 +2,16 @@ import React from 'react'
 import useStyles from './styles';
 import {Grid, Button, Typography} from '@material-ui/core'
 import ButtonArrow from '../UI/ButtonArrow/ButtonArrow'
-import { useTheme } from '@material-ui/core';
+import { useTheme, useMediaQuery } from '@material-ui/core';
 import customSoftwareIcon from '../../assets/Custom Software Icon.svg'
 
 function ServicesBlock() {
     const classes = useStyles();
     const theme = useTheme();
+    const matchesSM = useMediaQuery(theme.breakpoints.down('sm')); 
     return (
-            <Grid className={classes.serviceContainer} container direction='row'>
-                <Grid style={{marginLeft:"5em"}} item>
+            <Grid className={classes.serviceContainer} justify={matchesSM ? 'center' : undefined} container direction='row'>
+                <Grid style={{marginLeft: matchesSM ? 0: "5em", textAlign: matchesSM ? 'center': undefined}} item>
                     <Typography variant='h4'>Custom Software Development</Typography>
                     <Typography className={classes.subtitle} variant='subtitle1'>Save Energy. Save Time. Save Money</Typography>
                     <Typography variant='subtitle1'>Complete digital solutions, from investigation to {" "}<span className={classes.specialText}>celebration</span></Typography>
