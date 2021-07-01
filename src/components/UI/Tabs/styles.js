@@ -32,6 +32,9 @@ export default makeStyles((theme)=>(
             marginLeft: "50px",
             marginRight: '25px',
             height: '45px',
+            "&:hover":{
+                backgroundColor: theme.palette.secondary.light
+            } 
         },
         menu:{
             backgroundColor: theme.palette.common.blue,
