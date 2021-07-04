@@ -6,6 +6,7 @@ import ServicesBlock from '../ServicesBlock/ServicesBlock';
 import MobileDev from '../MobileDev/MobileDev';
 import WebDev from '../WebDev/WebDev';
 import RevolutionBlock from '../RevolutionBlock/RevolutionBlock';
+import InfoBlock from '../InfoBlock/InfoBlock';
 
 function LandingPage() {
     const classes = useStyles();
@@ -16,6 +17,7 @@ function LandingPage() {
             <MobileDev/>
             <WebDev/>
             <RevolutionBlock/>
+            <InfoBlock/>
         </Grid>
         
     )
