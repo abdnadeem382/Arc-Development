@@ -4,8 +4,9 @@ import {Grid, Button, Typography} from '@material-ui/core'
 import ButtonArrow from '../UI/ButtonArrow/ButtonArrow'
 import { useTheme, useMediaQuery } from '@material-ui/core';
 import websitesIcon from '../../assets/websiteIcon.svg'
+import {Link} from 'react-router-dom'
 
-function WebDev() {
+function WebDev({setValue, setSelectedIndex}) {
     const classes = useStyles();
     const theme = useTheme();
     const matchesSM = useMediaQuery(theme.breakpoints.down('sm')); 
@@ -15,7 +16,7 @@ function WebDev() {
                     <Typography variant='h4'>Website Development</Typography>
                     <Typography className={classes.subtitle} variant='subtitle1'>Reach More. Discover More. Sell More</Typography>
                     <Typography variant='subtitle1'>Optimized for Search Engines, built for speed </Typography>
-                    <Button className={classes.learnBtnServices} variant = 'outlined'>
+                    <Button onClick={()=>{setValue(1); setSelectedIndex(3)}} component={Link} to='/website' className={classes.learnBtnServices} variant = 'outlined'>
                         <span style={{marginRight: 6.5}}>Learn More</span>
                         <ButtonArrow width={15} height={15} fill={theme.palette.common.blue} />
                     </Button>  

@@ -7,7 +7,7 @@ import facebook from '../../../assets/facebook.svg'
 import instagram from '../../../assets/instagram.svg'
 import twitter from '../../../assets/twitter.svg'
 
-function Footer({value, setValue, selectedIndex, setSelectedIndex}) {
+function Footer({setValue,  setSelectedIndex}) {
 
     const classes = useStyles();
 

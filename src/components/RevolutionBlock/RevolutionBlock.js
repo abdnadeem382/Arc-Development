@@ -2,12 +2,12 @@ import React from 'react'
 import useStyles from './styles';
 import {Grid, Button, Typography, Card, CardContent} from '@material-ui/core'
 import ButtonArrow from '../UI/ButtonArrow/ButtonArrow'
-import { useTheme, useMediaQuery } from '@material-ui/core';
+import { useTheme } from '@material-ui/core';
+import {Link} from 'react-router-dom'
 
-function RevolutionBlock() {
+function RevolutionBlock({setValue}) {
     const classes = useStyles();
     const theme = useTheme();
-    const matchesSM = useMediaQuery(theme.breakpoints.down('sm')); 
     return (
             <Grid container className={classes.revContainer} alignItems='center' justify='center'>
                 <Card elevation={6} className={classes.revCard}>
@@ -18,7 +18,7 @@ function RevolutionBlock() {
                             </Grid>
                             <Grid item >
                                 <Typography variant='subtitle1'>Visionary insights coupled with cutting-edge technology is a recipe for revolution</Typography>
-                                <Button className={classes.learnBtnHero} variant='outlined'>
+                                <Button onClick={()=>setValue(2)} component={Link} to='/revolution' className={classes.learnBtnHero} variant='outlined'>
                                     <span style={{marginRight: 6.5}}>Learn More</span>
                                     <ButtonArrow width={15} height={15} fill={theme.palette.common.blue}/>
                             </Button>

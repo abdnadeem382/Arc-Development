@@ -63,12 +63,15 @@ function NavTabs({matches, value, setValue, selectedIndex, setSelectedIndex}) {
                         setSelectedIndex(route.selectedIndex)
                     }
                     break;
+                case '/estimate':
+                    setValue(5);
+                    break;
                 default:
                     break;
             }
             
         })
-    },[value, menuOptions, routes, selectedIndex, setValue])
+    },[value, menuOptions, routes, selectedIndex, setSelectedIndex, setValue])
 
 
     return (
@@ -91,7 +94,7 @@ function NavTabs({matches, value, setValue, selectedIndex, setSelectedIndex}) {
                         onMouseOver={route.onMouseOver}/>
                 ))}
                 </Tabs>
-                <Button variant='contained' color='secondary' component={Link} to='/estimate' className={classes.btn} >Free Estimate</Button>
+                <Button variant='contained' color='secondary' component={Link} to='/estimate' onClick={()=>setValue(5)} className={classes.btn} >Free Estimate</Button>
                 <Menu 
                     id='simple-menu' 
                     anchorEl={anchorEl} 

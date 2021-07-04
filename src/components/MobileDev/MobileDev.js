@@ -4,8 +4,9 @@ import {Grid, Button, Typography} from '@material-ui/core'
 import ButtonArrow from '../UI/ButtonArrow/ButtonArrow'
 import { useTheme, useMediaQuery } from '@material-ui/core';
 import mobileAppsIcon from '../../assets/mobileIcon.svg'
+import {Link} from 'react-router-dom'
 
-function MobileDev() {
+function MobileDev({setValue, setSelectedIndex}) {
     const classes = useStyles();
     const theme = useTheme();
     const matchesSM = useMediaQuery(theme.breakpoints.down('sm')); 
@@ -15,7 +16,7 @@ function MobileDev() {
                     <Typography variant='h4'>Mobile App Development</Typography>
                     <Typography className={classes.subtitle} variant='subtitle1'>Extend Functionality. Extend Access. Increase Engagement</Typography>
                     <Typography variant='subtitle1'>Integrate your web experience or create a standalone app  {matchesSM ? null: <br/>} with either mobile platform </Typography>
-                    <Button className={classes.learnBtnServices} variant = 'outlined'>
+                    <Button onClick={()=>{setValue(1); setSelectedIndex(2)}} component={Link} to='/mobileapps' className={classes.learnBtnServices} variant = 'outlined'>
                         <span style={{marginRight: 6.5}}>Learn More</span>
                         <ButtonArrow width={15} height={15} fill={theme.palette.common.blue} />
                     </Button>  

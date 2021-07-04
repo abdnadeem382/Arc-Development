@@ -29,8 +29,7 @@ function Header(props) {
         <ElevationScroll>
         <AppBar position='fixed' color='primary' className={classes.appbar}>
             <Toolbar disableGutters>
-                <Tabs matches={matches} {...props}/>
-                
+                <Tabs matches={matches} {...props}/> 
             </Toolbar>
         </AppBar>
         </ElevationScroll>
