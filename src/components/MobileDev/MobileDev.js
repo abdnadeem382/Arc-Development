@@ -12,7 +12,7 @@ function MobileDev({setValue, setSelectedIndex}) {
     const matchesSM = useMediaQuery(theme.breakpoints.down('sm')); 
     return (
             <Grid className={classes.serviceContainer} justify={matchesSM ? 'center' : 'flex-end'} container direction='row'>
-                <Grid style={{ textAlign: matchesSM ? 'center': undefined}} item>
+                <Grid style={{ textAlign: matchesSM ? 'center': undefined, width: matchesSM ? undefined : '35em'}} item>
                     <Typography variant='h4'>Mobile App Development</Typography>
                     <Typography className={classes.subtitle} variant='subtitle1'>Extend Functionality. Extend Access. Increase Engagement</Typography>
                     <Typography variant='subtitle1'>Integrate your web experience or create a standalone app  {matchesSM ? null: <br/>} with either mobile platform </Typography>
@@ -22,7 +22,7 @@ function MobileDev({setValue, setSelectedIndex}) {
                     </Button>  
                 </Grid>
                 <Grid item style={{marginRight: matchesSM ? 0: "5em"}}>
-                    <img className={classes.img} src={mobileAppsIcon} alt='mobile app development icon'/>
+                    <img className={classes.img} width='250em' src={mobileAppsIcon} alt='mobile app development icon'/>
                 </Grid>
             </Grid>
     )

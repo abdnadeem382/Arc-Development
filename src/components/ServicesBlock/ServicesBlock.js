@@ -21,7 +21,7 @@ function ServicesBlock({setValue, setSelectedIndex}) {
                         <ButtonArrow width={15} height={15} fill={theme.palette.common.blue} />
                     </Button>  
                 </Grid>
-                <Grid item>
+                <Grid item style={{paddingLeft: matchesSM ? '5em': 0, paddingRight: matchesSM ? '5em': 0}}>
                     <img className={classes.img} src={customSoftwareIcon} alt='custom software icon'/>
                 </Grid>
             </Grid>
