@@ -3,6 +3,7 @@ import Header from './UI/Header/Header'
 import Footer from './UI/Footer/Footer'
 import LandingPage from './LandingPage/LandingPage';
 import ServicesPage from './ServicesPage/ServicesPage';
+import CustomSoftware from './CustomSoftwarePage/CustomSoftware';
 import { ThemeProvider } from '@material-ui/core/styles';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import theme from './UI/Theme';
@@ -17,7 +18,7 @@ function App() {
       <Switch>
         <Route exact path='/' render={(props)=><LandingPage {...props} setValue={setValue} setSelectedIndex={setSelectedIndex}/>}/>
         <Route exact path='/services'  render={(props)=><ServicesPage {...props} setValue={setValue} setSelectedIndex={setSelectedIndex}/>}/>
-        <Route exact path='/customsoftware' component={()=><div>Custom Software</div>}/>
+        <Route exact path='/customsoftware' render={(props)=><CustomSoftware {...props} setValue={setValue} setSelectedIndex={setSelectedIndex}/>}/>
         <Route exact path='/mobileapps' component={()=><div>Mobile App</div>}/>
         <Route exact path='/website' component={()=><div>Websites</div>}/>
         <Route exact path='/revolution' component={()=><div>Revolution</div>}/>
