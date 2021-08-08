@@ -18,5 +18,8 @@ export default makeStyles((theme)=>({
         "&:hover":{
             backgroundColor: "transparent"
         } 
+    },
+    itemContainer:{
+        maxWidth: '40em'
     }
 }))

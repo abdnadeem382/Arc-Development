@@ -1,18 +1,22 @@
 import React from 'react'
 import {Grid, Typography, useTheme, IconButton, useMediaQuery} from '@material-ui/core'
-import Lottie from 'react-lottie'
+import SaveIcons from './SaveIcons'
+import DigitalDocs from './DigitalDocs'
+import Scale from './Scale'
+import Automation from './Automation'
+import UserExperience from './UserExperience'
+import RootCause from './RootCause'
 import {Link} from 'react-router-dom'
 import useStyles from './styles'
 import backArrow from '../../assets/backArrow.svg'
 import forwardArrow from '../../assets/forwardArrow.svg'
-import lightbulb from '../../assets/bulb.svg'
-import cash from '../../assets/cash.svg'
-import stopWatch from '../../assets/stopwatch.svg'
 
 function CustomSoftware({setSelectedIndex}) {
     const classes = useStyles();
     const theme= useTheme();
     const matchesSM = useMediaQuery(theme.breakpoints.down('sm'));
+
+
     return (
         <Grid container direction='column' className={classes.mainContainer}>
             <Grid item container direction='row'>
@@ -51,33 +55,20 @@ function CustomSoftware({setSelectedIndex}) {
                     <IconButton component={Link} to='/mobileapps' onClick={()=> setSelectedIndex(2)} className={classes.arrow}>
                         <img src={forwardArrow} alt="Forward to Mobile App Development Page"/>
                     </IconButton>
-                </Grid>
-                
+                </Grid> 
             </Grid>
-            <Grid item container direction='row' justify='center' style={{marginTop: '15em', marginBottom: '20em'}}>
-                <Grid item container direction='column'md alignItems="center" style={{maxWidth: "40em"}}>
-                    <Grid item>
-                        <Typography variant="h4">Save Energy</Typography>
-                    </Grid>
-                    <Grid item>
-                        <img src={lightbulb} alt='Light Bulb'/>
-                    </Grid>
+            <SaveIcons/>
+            <Grid>
+                <Grid item container direction='row' justify='space-around'>
+                    <DigitalDocs/>
+                    <Scale/>
                 </Grid>
-                <Grid item container direction='column'md alignItems="center" style={{maxWidth: "40em"}}>
-                    <Grid item>
-                        <Typography variant="h4">Save Time</Typography>
-                    </Grid>
-                    <Grid item>
-                        <img src={stopWatch} alt='StopWatch'/>
-                    </Grid>
+                <Grid item container direction='row' style={{marginTop:"20em", marginBottom: "20em"}}>
+                    <RootCause/>
                 </Grid>
-                <Grid item container direction='column'md alignItems="center" style={{maxWidth: "40em"}}>
-                    <Grid item>
-                        <Typography variant="h4">Save Money</Typography>
-                    </Grid>
-                    <Grid item>
-                        <img src={cash} alt='Cash'/>
-                    </Grid>
+                <Grid item container direction='row' justify='space-around'>
+                    <Automation/>
+                    <UserExperience/>
                 </Grid>
             </Grid>
         </Grid>
