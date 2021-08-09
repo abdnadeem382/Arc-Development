@@ -1,5 +1,5 @@
 import React from 'react'
-import {Grid, Typography} from '@material-ui/core'
+import {Grid, Typography, useTheme, useMediaQuery} from '@material-ui/core'
 import Lottie from 'react-lottie'
 import useStyles from './styles'
 import scaleAnimation from '../../animations/scaleAnimation/data'
@@ -7,6 +7,9 @@ import scaleAnimation from '../../animations/scaleAnimation/data'
 function Scale() {
 
     const classes = useStyles();
+    const theme= useTheme();
+    const matchesMD = useMediaQuery(theme.breakpoints.down('md'));
+    const matchesSM = useMediaQuery(theme.breakpoints.down('sm'));
 
     const defaultOptions = {
         loop: true,
@@ -18,7 +21,7 @@ function Scale() {
     };
 
     return (
-        <Grid item container className={classes.itemContainer} md>
+        <Grid item container className={classes.itemContainer} direction={matchesSM ? "column" : 'row'} md>
             <Grid item md>
                 <Lottie options={defaultOptions}
                         style={{maxHeight: 260, maxWidth: 280}}
@@ -26,12 +29,12 @@ function Scale() {
                 </Grid>
                 <Grid item container direction='column' md>
                     <Grid item>
-                        <Typography align='right' paragraph variant='h4'>
+                        <Typography align='right' paragraph variant='h4' align={matchesSM ? 'center' : undefined}>
                             Scale
                         </Typography>
                     </Grid>
                     <Grid item>
-                        <Typography align='right' paragraph variant='body2'>
+                        <Typography align={matchesSM ? 'center' : 'right'} paragraph variant='body2'>
                               Whether you are a large brand, just getting started, or taking off right now,
                               our application architecture ensures pain-free growth and reliablity.      
                         </Typography>

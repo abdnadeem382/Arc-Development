@@ -1,14 +1,20 @@
 import React from 'react'
-import {Grid, Typography} from '@material-ui/core'
+import {Grid, Typography, useTheme, useMediaQuery} from '@material-ui/core'
 import roots from '../../assets/root.svg'
 import useStyles from './styles'
 
 function RootCause() {
     const classes = useStyles();
+    const theme= useTheme();
+    const matchesSM = useMediaQuery(theme.breakpoints.down('sm'));
     return (
         <Grid item container direction='column' alignItems='center'>
                         <Grid item>
-                            <img src={roots} alt='Tree with roots extending out' height="450em" width='450em'/>
+                            <img 
+                                src={roots} 
+                                alt='Tree with roots extending out' 
+                                height={matchesSM ? "300em" : "450em"} 
+                                width={matchesSM ? "300em" : "450em"} />
                         </Grid>
                         <Grid item className={classes.itemContainer}> 
                             <Typography variant='h4' align='center' gutterBottom>
