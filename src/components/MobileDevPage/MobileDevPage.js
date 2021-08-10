@@ -6,11 +6,14 @@ import forwardArrow from '../../assets/forwardArrow.svg'
 import useStyles from './styles'
 import Integration from './Integration'
 import PlatformSupport from './PlatformSupport'
+import Icons from './Icons'
+import CallToAction from '../UI/CallToAction/CallToAction'
 
-function MobileDevPage({setSelectedIndex}) {
+function MobileDevPage({setSelectedIndex, setValue}) {
     const classes = useStyles();
     const theme = useTheme();
     const matchesMD = useMediaQuery(theme.breakpoints.down('md'));
+    const matchesSM = useMediaQuery(theme.breakpoints.down('sm'));
     const matchesXS = useMediaQuery(theme.breakpoints.down('xs'));
  
 
@@ -56,10 +59,16 @@ function MobileDevPage({setSelectedIndex}) {
                     </Grid>
                 </Hidden>
             </Grid>
-                <Grid item container direction='row' className={classes.rowContainer} >
+                <Grid item container direction={matchesSM ? "column" : 'row'} style={{marginTop: "15em", marginBottom: "15em"}} className={classes.rowContainer} >
                     <Integration/>
                     <PlatformSupport/>
-                </Grid>    
+                </Grid> 
+                <Grid item container direction={matchesMD ? "column" : 'row'}  style={{ marginBottom: "15em"}} className={classes.rowContainer}>
+                    <Icons/>
+                </Grid>
+                <Grid item>
+                    <CallToAction setValue={setValue}/>
+                </Grid>   
         </Grid>
     )
 }
