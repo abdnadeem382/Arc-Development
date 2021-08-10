@@ -5,6 +5,10 @@ import backArrow from '../../assets/backArrow.svg'
 import forwardArrow from '../../assets/forwardArrow.svg'
 import useStyles from './styles'
 import Analytics from './Analytics'
+import Ecommerce from './Ecommerce'
+import Outreach from './Outreach'
+import SEO from './SEO'
+import CallToAction from '../UI/CallToAction/CallToAction'
 
 function WebDevPage({setSelectedIndex, setValue}) {
     const classes = useStyles();
@@ -52,8 +56,20 @@ function WebDevPage({setSelectedIndex, setValue}) {
                     </Grid>
                 </Hidden>
             </Grid>
-            <Grid item container className={classes.rowContainer} alignItems='center' direction='row'>
+            <Grid item container className={classes.rowContainer} style={{marginTop: '12em'}} alignItems='center' direction={matchesSM ? 'column' : 'row'}>
                 <Analytics/>
+            </Grid>
+            <Grid item container className={classes.rowContainer} style={{marginTop: '12em', marginBottom: '12em'}} alignItems='center' justify="flex-end" direction={matchesSM ? 'column' : 'row'}>
+                <Ecommerce/>
+            </Grid>
+            <Grid item container className={classes.rowContainer} alignItems='center' direction={matchesSM ? 'column' : 'row'}>
+                <Outreach/>
+            </Grid>
+            <Grid item container className={classes.rowContainer} style={{marginTop: '12em', marginBottom: '12em'}} alignItems='center' justify="flex-end" direction={matchesSM ? 'column' : 'row'}>
+                <SEO/>
+            </Grid>
+            <Grid item>
+                <CallToAction setValue={setValue}/>
             </Grid>
         </Grid>
     )

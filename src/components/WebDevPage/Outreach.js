@@ -1,9 +1,9 @@
 import React from 'react'
-import {Grid, Typography, useTheme, useMediaQuery} from '@material-ui/core'
-import analytics from '../../assets/analytics.svg'
+import {Grid, Typography ,useTheme, useMediaQuery} from '@material-ui/core'
+import outreach from '../../assets/outreach.svg'
 import useStyles from './styles'
 
-function Analytics() {
+function Outreach() {
     const classes = useStyles();
     const theme = useTheme();
     const matchesMD = useMediaQuery(theme.breakpoints.down('md'));
@@ -14,22 +14,22 @@ function Analytics() {
             <Grid container direction='column'>
                 <Grid item>
                     <Typography align={matchesSM ? "center" : undefined} variant='h4' gutterBottom>
-                        Analytics
+                        Outreach
                     </Typography>
                 </Grid>
                 <Grid item>
-                    <img src={analytics} alt='graph with magnifying glass' style={{marginLeft: '-2.75em'}}/>
+                    <img src={outreach} alt='megaphone' />
                 </Grid>
             </Grid>
         </Grid>
-        <Grid item className={classes.paraContainer }>
+        <Grid item style={{marginLeft: matchesSM ? 0 :'1em'}} className={classes.paraContainer }>
         <Typography align={matchesSM ? "center" : undefined} variant='body2'>
-            Knowledge is power and data is 21st Century gold. Analyzing this data can reveal hidden patterns and trends in your business,
-            empowering you to make smarter decisions with measurable effects.
+            Draw people in with a dazzling website. Showing off your products online is a great way
+            to help customers decide what's right for them before visiting in person.
         </Typography>
         </Grid>
         </>
     )
 }
 
-export default Analytics
+export default Outreach
