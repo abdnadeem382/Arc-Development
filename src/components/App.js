@@ -5,6 +5,7 @@ import LandingPage from './LandingPage/LandingPage';
 import ServicesPage from './ServicesPage/ServicesPage';
 import CustomSoftware from './CustomSoftwarePage/CustomSoftware';
 import MobileDevPage from './MobileDevPage/MobileDevPage';
+import WebDevPage from './WebDevPage/WebDevPage';
 import { ThemeProvider } from '@material-ui/core/styles';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import theme from './UI/Theme';
@@ -21,7 +22,7 @@ function App() {
         <Route exact path='/services'  render={(props)=><ServicesPage {...props} setValue={setValue} setSelectedIndex={setSelectedIndex}/>}/>
         <Route exact path='/customsoftware' render={(props)=><CustomSoftware {...props} setValue={setValue} setSelectedIndex={setSelectedIndex}/>}/>
         <Route exact path='/mobileapps' render={(props)=><MobileDevPage {...props} setValue={setValue} setSelectedIndex={setSelectedIndex} />}/>
-        <Route exact path='/website' component={()=><div>Websites</div>}/>
+        <Route exact path='/website' render={(props)=><WebDevPage {...props} setValue={setValue} setSelectedIndex={setSelectedIndex} />}/>
         <Route exact path='/revolution' component={()=><div>Revolution</div>}/>
         <Route exact path='/about' component={()=><div>About Us</div>}/>
         <Route exact path='/contact' component={()=><div>Contact Us</div>}/>
