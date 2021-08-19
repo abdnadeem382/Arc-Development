@@ -1,17 +1,11 @@
 import React from 'react'
-import integrationAnimation from '../../animations/integrationAnimation/data.json'
 import {Grid, Typography, useTheme, useMediaQuery} from '@material-ui/core'
-import useStyles from './styles'
-
 
 function PlatformSupport() {
-    const classes = useStyles();
     const theme = useTheme();
-    const matchesMD = useMediaQuery(theme.breakpoints.down('md'));
     const matchesSM = useMediaQuery(theme.breakpoints.down('sm'));
 
-    return (
-        
+    return (  
         <Grid item container direction='column' md>
             <Grid item>
                 <Typography  align={matchesSM ? "center" : 'right'} variant='h4' gutterBottom>

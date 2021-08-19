@@ -1,5 +1,5 @@
 import React from 'react'
-import {Grid, Typography, useTheme, IconButton, useMediaQuery, Hidden} from '@material-ui/core'
+import {Grid, Typography, useTheme, useMediaQuery} from '@material-ui/core'
 import {Link} from 'react-router-dom'
 import useStyles from './styles'
 import Vision from './Vision'

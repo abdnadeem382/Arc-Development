@@ -28,7 +28,7 @@ function Scale() {
                 </Grid>
                 <Grid item container direction='column' md>
                     <Grid item>
-                        <Typography align='right' paragraph variant='h4' align={matchesSM ? 'center' : undefined}>
+                        <Typography paragraph variant='h4' align={matchesSM ? 'center' : undefined}>
                             Scale
                         </Typography>
                     </Grid>
