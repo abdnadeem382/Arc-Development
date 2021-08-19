@@ -6,7 +6,6 @@ import seo from '../../assets/seo.svg'
 function  SEO() {
     const classes = useStyles();
     const theme = useTheme();
-    const matchesMD = useMediaQuery(theme.breakpoints.down('md'));
     const matchesSM = useMediaQuery(theme.breakpoints.down('sm'));
     return (
         <>

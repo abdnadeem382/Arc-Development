@@ -8,7 +8,6 @@ function Scale() {
 
     const classes = useStyles();
     const theme= useTheme();
-    const matchesMD = useMediaQuery(theme.breakpoints.down('md'));
     const matchesSM = useMediaQuery(theme.breakpoints.down('sm'));
 
     const defaultOptions = {
