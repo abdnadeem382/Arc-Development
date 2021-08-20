@@ -4,7 +4,6 @@ import iterate from '../../assets/iterateIcon.svg'
 
 function Iterate() {
     const theme = useTheme();
-    const matchesSM = useMediaQuery(theme.breakpoints.down('sm'));
     const matchesMD = useMediaQuery(theme.breakpoints.down('md'));
     return (
         <>
@@ -31,7 +30,7 @@ function Iterate() {
             </Grid>
         </Grid>
         <Grid item lg style={{alignSelf:"center"}}>
-            <img src={iterate} alt='falling dominos'/>
+            <img src={iterate}  width="100%" alt='falling dominos' style={{maxWidth: "900",marginTop:"2em"}}/>
         </Grid>
         </>
     )

@@ -4,7 +4,6 @@ import launch from '../../assets/launchIcon.svg'
 
 function Launch() {
     const theme = useTheme();
-    const matchesSM = useMediaQuery(theme.breakpoints.down('sm'));
     const matchesMD = useMediaQuery(theme.breakpoints.down('md'));
     return (
         <>
@@ -33,7 +32,8 @@ function Launch() {
             </Grid>
         </Grid>
         <Grid item lg style={{alignSelf:"center"}}>
-            <img src={launch} alt='Rocket'/>
+            <img src={launch} alt='Rocket' width="100%" 
+                style={{maxWidth: 200, height: matchesMD ? "700px" : 800, marginTop: matchesMD  ? "2em": undefined}}/>
         </Grid>
         </>
     )

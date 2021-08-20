@@ -4,7 +4,6 @@ import maintain from '../../assets/maintainIcon.svg'
 
 function Maintain() {
     const theme = useTheme();
-    const matchesSM = useMediaQuery(theme.breakpoints.down('sm'));
     const matchesMD = useMediaQuery(theme.breakpoints.down('md'));
     return (
         <>
@@ -32,7 +31,7 @@ function Maintain() {
             </Grid>
         </Grid>
         <Grid item lg style={{alignSelf:"center"}}>
-            <img src={maintain} alt='Wrench tightening bolts'/>
+            <img src={maintain} width="100%" alt='Wrench tightening bolts' style={{maxWidth: 500, marginTop:"2em" }}/>
         </Grid>
         </>
     )

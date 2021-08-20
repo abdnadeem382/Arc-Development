@@ -6,7 +6,6 @@ import technologyAnimation from '../../animations/technologyAnimation/data.json'
 function Technology() {
     
     const theme = useTheme();
-    const matchesSM = useMediaQuery(theme.breakpoints.down('sm'));
     const matchesMD = useMediaQuery(theme.breakpoints.down('md'));
 
     const defaultOptions = {

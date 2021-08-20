@@ -5,7 +5,6 @@ import consultation from '../../assets/consultationIcon.svg'
 function Consultation() {
 
     const theme = useTheme();
-    const matchesSM = useMediaQuery(theme.breakpoints.down('sm'));
     const matchesMD = useMediaQuery(theme.breakpoints.down('md'));
 
     return (
@@ -37,7 +36,7 @@ function Consultation() {
             </Grid>
         </Grid>
         <Grid item lg style={{alignSelf:"center"}}>
-            <img src={consultation} alt='handshake'/>
+            <img src={consultation} alt='handshake' width="100%" style={{maxWidth: 700, marginTop:"2em"}}/>
         </Grid>
         </>
     )

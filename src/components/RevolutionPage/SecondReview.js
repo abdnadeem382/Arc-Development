@@ -4,7 +4,6 @@ import review from '../../assets/reviewIcon.svg'
 
 function SecondReview() {
     const theme = useTheme();
-    const matchesSM = useMediaQuery(theme.breakpoints.down('sm'));
     const matchesMD = useMediaQuery(theme.breakpoints.down('md'));
     return (
         <>
@@ -27,7 +26,7 @@ function SecondReview() {
             </Grid>
         </Grid>
         <Grid item lg style={{alignSelf:"center"}}>
-            <img src={review} alt='Magnifying Glass'/>
+            <img src={review} width="100%" alt='Magnifying Glass' style={{maxWidth: 900, marginTop:"2em"}}/>
         </Grid>
         </>
     )

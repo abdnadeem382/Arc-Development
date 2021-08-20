@@ -4,7 +4,6 @@ import build from '../../assets/buildIcon.svg'
 
 function Build() {
     const theme = useTheme();
-    const matchesSM = useMediaQuery(theme.breakpoints.down('sm'));
     const matchesMD = useMediaQuery(theme.breakpoints.down('md'));
 
     return (
@@ -46,7 +45,7 @@ function Build() {
             </Grid>
         </Grid>
         <Grid item lg style={{alignSelf:"center"}}>
-            <img src={build} alt='Construction Site'/>
+            <img src={build} alt='Construction Site' width="100%" style={{maxWidth: matchesMD ? 700 : 1000, marginTop:"2em"}}/>
         </Grid>
         </>
     )

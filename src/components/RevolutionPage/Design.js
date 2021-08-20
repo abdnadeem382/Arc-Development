@@ -5,7 +5,6 @@ import design from '../../assets/designIcon.svg'
 function Design() {
 
     const theme = useTheme();
-    const matchesSM = useMediaQuery(theme.breakpoints.down('sm'));
     const matchesMD = useMediaQuery(theme.breakpoints.down('md'));
     return (
         <>
@@ -28,7 +27,7 @@ function Design() {
             </Grid>
         </Grid>
         <Grid item lg style={{alignSelf:"center"}}>
-            <img src={design} alt='Paintbrush leaving stroke of paint'/>
+            <img src={design } width="100%" style={{maxWidth: 900, marginTop:"2em"}} alt='Paintbrush leaving stroke of paint'/>
         </Grid>
         </>
     )

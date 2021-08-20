@@ -4,7 +4,6 @@ import mockup from '../../assets/mockupIcon.svg'
 
 function Mockup() {
     const theme = useTheme();
-    const matchesSM = useMediaQuery(theme.breakpoints.down('sm'));
     const matchesMD = useMediaQuery(theme.breakpoints.down('md'));
     return (
         <>
@@ -32,7 +31,7 @@ function Mockup() {
             </Grid>
         </Grid>
         <Grid item lg style={{alignSelf:"center"}}>
-            <img src={mockup} alt='basic website design outline'/>
+            <img src={mockup} width="100%" style={{maxWidth: 900, marginTop:"2em"}} alt='basic website design outline'/>
         </Grid>
         </>
     )
