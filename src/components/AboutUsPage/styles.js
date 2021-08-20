@@ -9,19 +9,21 @@ export default makeStyles((theme)=>({
             paddingRight: '1.5em'
         }
     },
-    heading:{
-        maxWidth: '40em',
-
+    missionStatement:{
+        fontWeight: 400,
+        fontSize: '1.5rem',
+        maxWidth:"50em",
+        lineHeight: 1.4,
+        fontStyle:"italic",
+        [theme.breakpoints.down('md')]:{
+            maxWidth: "30em"
+        }
     },
-    arrowContainer:{
-        marginTop: '0.5em'
+    topMargin:{
+        marginTop: "5em"
     },
-    arrow:{
-        "&:hover":{
-            backgroundColor: "transparent"
-        } 
-    },
-    itemContainer:{
-        maxWidth: '40em'
+    avatar:{ 
+        width: "15em",
+        height: "15em"
     }
 }))

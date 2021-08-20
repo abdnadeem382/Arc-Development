@@ -17,7 +17,6 @@ import CallToAction from '../UI/CallToAction/CallToAction'
 function RevPage({setValue}) {
     const classes = useStyles();
     const theme = useTheme();
-    const matchesSM = useMediaQuery(theme.breakpoints.down('sm'));
     const matchesMD = useMediaQuery(theme.breakpoints.down('md'));
     return (
         <Grid container direction='column'>
