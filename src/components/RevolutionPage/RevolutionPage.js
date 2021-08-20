@@ -1,6 +1,5 @@
 import React from 'react'
 import {Grid, Typography, useTheme, useMediaQuery} from '@material-ui/core'
-import {Link} from 'react-router-dom'
 import useStyles from './styles'
 import Vision from './Vision'
 import Technology from './Technology'
@@ -13,8 +12,9 @@ import Iterate from './Iterate'
 import Review from './Review'
 import SecondReview from './SecondReview'
 import Build from './Build'
+import CallToAction from '../UI/CallToAction/CallToAction'
 
-function RevPage() {
+function RevPage({setValue}) {
     const classes = useStyles();
     const theme = useTheme();
     const matchesSM = useMediaQuery(theme.breakpoints.down('sm'));
@@ -64,6 +64,9 @@ function RevPage() {
             <Grid item container direction={matchesMD ? "column" : 'row'} className={classes.rowContainer} style={{backgroundColor: "#29ABE2", height: '90em'}}>
                 <Iterate/>
             </Grid>
+            <Grid item>
+                <CallToAction setValue={setValue}/>
+            </Grid>   
         </Grid>
     )
 }
