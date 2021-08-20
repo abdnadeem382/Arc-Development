@@ -12,6 +12,18 @@ export default makeStyles(theme=> ({
 
     topMargin: {
         marginTop: '2em'
+    },
+
+    visionImg: {
+        marginRight: '5em',
+        maxWidth: "40em",
+        [theme.breakpoints.down('md')]:{
+            marginRight: 0,
+            marginBottom: "5em"
+        },
+        [theme.breakpoints.down('sm')]:{
+            maxWidth: "300px"
+        }
     }
 }))
 

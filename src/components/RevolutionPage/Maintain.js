@@ -1,25 +1,28 @@
 import React from 'react'
-import {Grid, Typography} from '@material-ui/core'
+import {Grid, Typography, useTheme, useMediaQuery} from '@material-ui/core'
 import maintain from '../../assets/maintainIcon.svg'
 
 function Maintain() {
+    const theme = useTheme();
+    const matchesSM = useMediaQuery(theme.breakpoints.down('sm'));
+    const matchesMD = useMediaQuery(theme.breakpoints.down('md'));
     return (
         <>
-        <Grid item container direction='column' lg>
+        <Grid item container direction='column' lg alignItems={matchesMD ? "center" : undefined}>
             <Grid item>
-                <Typography variant='h4' gutterBottom style={{color: "#000", marginTop: '5em'}}>
+                <Typography align={ matchesMD ? 'center' : undefined} variant='h4' gutterBottom style={{color: "#000", marginTop: '5em'}}>
                     Maintain
                 </Typography>
             </Grid>
             <Grid item style={{maxWidth: '22em'}}>
-                <Typography variant='body2' style={{color: "#fff"}} paragraph>
+                <Typography align={ matchesMD ? 'center' : undefined} variant='body2' style={{color: "#fff"}} paragraph>
                     Our work does not end there.
                 </Typography>
-                <Typography variant='body2' style={{color: "#fff"}} paragraph>
+                <Typography align={ matchesMD ? 'center' : undefined} variant='body2' style={{color: "#fff"}} paragraph>
                     After a successful launch, we keep in close contact to listen 
                     to feedback and hear how the project is being received.
                 </Typography>
-                <Typography variant='body2' style={{color: "#fff"}} paragraph>
+                <Typography align={ matchesMD ? 'center' : undefined} variant='body2' style={{color: "#fff"}} paragraph>
                     From there on out we make sure your application is kept up
                     to date and taking advantage of the best features and practices
                     available. When new developments arise or new techniques are 

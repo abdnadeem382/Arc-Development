@@ -17,15 +17,17 @@ import Build from './Build'
 function RevPage() {
     const classes = useStyles();
     const theme = useTheme();
+    const matchesSM = useMediaQuery(theme.breakpoints.down('sm'));
+    const matchesMD = useMediaQuery(theme.breakpoints.down('md'));
     return (
         <Grid container direction='column'>
             <Grid item className={`${classes.rowContainer}  ${classes.topMargin}`}>
-                <Typography variant='h2' style={{fontFamily: "Pacifico"}}>The Revolution</Typography>
+                <Typography align={matchesMD ? "center" : undefined} variant='h2' style={{fontFamily: "Pacifico"}}>The Revolution</Typography>
             </Grid>
-            <Grid item container direction='row' alignItems='center' className={classes.rowContainer}>
+            <Grid item container direction={matchesMD ? "column" : 'row'} alignItems='center' className={classes.rowContainer} style={{marginTop: "5em"}}>
                 <Vision/>
             </Grid>
-            <Grid item container direction='row' alignItems='center' className={classes.rowContainer}>
+            <Grid item container direction={matchesMD ? "column" : 'row'} alignItems='center' className={classes.rowContainer} style={{marginTop: "10em", marginBottom: "10em "}}>
                 <Technology/>
             </Grid>
             <Grid item container direction='row' justify='center' className={classes.rowContainer}>
