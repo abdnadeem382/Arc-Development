@@ -21,8 +21,8 @@ function HeroBlock({setValue}) {
       };
 
     return (
-        <Grid container justify='flex-end' alignItems='center' direction='row'>
-            <Grid sm item className={classes.heroTextContainer}>
+        <Grid container justify='space-between' alignItems='center' direction='row'>
+            <Grid sm item className={classes.heroTextContainer} style={{maxWidth: '47.5em'}}>
                 <Typography variant='h2' align='center'>Bringing West Coast Technology<br/>to the Midwest </Typography>
                 <Grid container justify='center' className={classes.buttonContainer}>
                     <Grid item>
