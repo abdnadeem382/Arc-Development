@@ -17,6 +17,10 @@ export default makeStyles((theme)=>({
         fontStyle:"italic",
         [theme.breakpoints.down('md')]:{
             maxWidth: "30em"
+        },
+        [theme.breakpoints.down('sm')]:{
+            marginLeft: '1em',
+            marginRight: '1em'
         }
     },
     topMargin:{
@@ -25,5 +29,14 @@ export default makeStyles((theme)=>({
     avatar:{ 
         width: "15em",
         height: "15em"
+    },
+    historyImg:{
+        maxHeight: '22em',
+        [theme.breakpoints.down('md')]:{
+            width: '20em'
+        },
+        [theme.breakpoints.down('sm')]:{
+            width: '17em'
+        }
     }
 }))

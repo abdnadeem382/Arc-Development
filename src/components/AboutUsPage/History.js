@@ -1,8 +1,10 @@
 import React from 'react'
 import { Grid, Typography, useTheme, useMediaQuery } from '@material-ui/core'
+import useStyles from './styles'
 import history from '../../assets/history.svg'
 
 function History() {
+    const classes = useStyles(); 
     const theme = useTheme();
     const matchesMD = useMediaQuery(theme.breakpoints.down('md'));
     return (
@@ -41,7 +43,7 @@ function History() {
         </Grid>
             <Grid item>
                 <Grid item lg container justify="center" >
-                    <img src={history} alt="Quill pen sitting on top of book" style={{maxHeight: '22em', width: matchesMD ? "20em" : undefined}}/>
+                    <img src={history} alt="Quill pen sitting on top of book" className={classes.historyImg}/>
                 </Grid>
             </Grid>
         </>
