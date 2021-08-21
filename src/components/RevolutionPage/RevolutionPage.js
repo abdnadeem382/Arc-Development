@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import {Grid, Typography, useTheme, useMediaQuery} from '@material-ui/core'
 import useStyles from './styles'
 import Vision from './Vision'
@@ -18,6 +18,11 @@ function RevPage({setValue}) {
     const classes = useStyles();
     const theme = useTheme();
     const matchesMD = useMediaQuery(theme.breakpoints.down('md'));
+
+    useEffect(()=>{
+        window.scrollTo(0, 0)
+    })
+
     return (
         <Grid container direction='column'>
             <Grid item className={`${classes.rowContainer}  ${classes.topMargin}`}>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import {Grid, Typography, useTheme, IconButton, useMediaQuery, Hidden} from '@material-ui/core'
 import {Link} from 'react-router-dom'
 import backArrow from '../../assets/backArrow.svg'
@@ -15,7 +15,10 @@ function MobileDevPage({setSelectedIndex, setValue}) {
     const matchesMD = useMediaQuery(theme.breakpoints.down('md'));
     const matchesSM = useMediaQuery(theme.breakpoints.down('sm'));
     const matchesXS = useMediaQuery(theme.breakpoints.down('xs'));
- 
+    
+    useEffect(()=>{
+        window.scrollTo(0, 0)
+    })
 
     return (
         <Grid container direction='column'>

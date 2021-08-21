@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import useStyles from './styles';
 import {Grid} from '@material-ui/core'
 import HeroBlock from '../HeroBlock/HeroBlock'
@@ -11,8 +11,11 @@ import CallToAction from '../UI/CallToAction/CallToAction';
 
 function LandingPage(props) {
     const classes = useStyles();
-
+    useEffect(()=>{
+        window.scrollTo(0, 0)
+    })
     return (
+        
         <Grid container direction='column' className={classes.mainContainer} >
             <HeroBlock {...props}/>
             <ServicesBlock {...props}/>
