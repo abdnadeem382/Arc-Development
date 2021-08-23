@@ -87,6 +87,11 @@ export default makeStyles((theme)=>(
         [theme.breakpoints.down('sm')]:{
           marginTop: '1em'
         },
+      },
+
+      links:{
+        textDecoration: 'none',
+        color: 'inherit'
       }
     
     }

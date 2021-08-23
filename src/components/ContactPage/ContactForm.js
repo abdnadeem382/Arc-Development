@@ -11,6 +11,36 @@ function ContactForm({matchesMD}) {
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
     const [message, setMessage] = useState('');
+    const [emailHelper, setEmailHelper] = useState('');
+    const [phoneHelper, setPhoneHelper] = useState('');
+
+    const onChange=(e)=>{
+        let valid;
+        switch(e.target.id){
+            case 'email':
+                setEmail(e.target.value);
+                valid=  /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(e.target.value);
+                if(!valid){
+                    setEmailHelper('Invalid email')
+                }
+                else{
+                    setEmailHelper('');
+                }
+                break;
+            case 'phone':
+                setPhone(e.target.value);
+                valid = /^(\+92|0|92)[0-9]{10}$/.test(e.target.value);
+                if(!valid){
+                    setPhoneHelper('Invlid phone number')
+                }
+                else{
+                    setPhoneHelper('');
+                }
+                break;
+            default:
+                break;
+        }
+    }
 
     return (
         <>
@@ -19,7 +49,9 @@ function ContactForm({matchesMD}) {
                 <img src={phoneIcon} alt='Phone Icon' style={{marginRight: '0.5em'}}/>
             </Grid>
             <Grid item>
-                <Typography variant='body2' className={`${classes.blueText} ${classes.labelText}`}>(+92) 334-1111111</Typography>
+                <Typography variant='body2' className={`${classes.blueText} ${classes.labelText}`}>
+                    <a className={classes.links} href='tel:03341111111'>(+92) 334-1111111</a>
+                    </Typography>
             </Grid>
         </Grid>
         <Grid justify={matchesMD ? 'center' : undefined} item container style={{marginBottom: '2em'}} >
@@ -27,7 +59,9 @@ function ContactForm({matchesMD}) {
                 <img src={emailIcon} alt='Envelope Icon' style={{marginRight: '0.5em', verticalAlign:'bottom'}}/>
             </Grid>
             <Grid item>
-                <Typography variant='body2' className={`${classes.blueText} ${classes.labelText}`}>abdullah@gmail.com</Typography>
+                <Typography variant='body2' className={`${classes.blueText} ${classes.labelText}`}>
+                    <a className={classes.links} href='mailto:abdullah@gmail.com'>abdullah@gmail.com</a>
+                </Typography>
             </Grid>
         </Grid>
         <Grid item container direction='column' style={{maxWidth: '20em'}}>
@@ -35,10 +69,24 @@ function ContactForm({matchesMD}) {
                 <TextField fullWidth label='Name' id='name' value={name} onChange={e=>{setName(e.target.value)}}/>
             </Grid>
             <Grid item className={classes.textfields}>
-                <TextField fullWidth label='Email' id='email' value={email} onChange={e=>{setEmail(e.target.value)}}/>
+                <TextField 
+                    fullWidth 
+                    label='Email' 
+                    id='email' 
+                    value={email}
+                    helperText={emailHelper}
+                    error={emailHelper.length !== 0}
+                    onChange={onChange}/>
             </Grid>
             <Grid item>
-                <TextField fullWidth label='Phone' id='phone' value={phone} onChange={e=>{setPhone(e.target.value)}}/>
+                <TextField 
+                    fullWidth 
+                    label='Phone' 
+                    id='phone' 
+                    error={phoneHelper.length !== 0} 
+                    helperText={phoneHelper}
+                    value={phone} 
+                    onChange={onChange}/>
             </Grid>
         </Grid>
         <Grid item style={{maxWidth: '20em'}}>
@@ -53,7 +101,18 @@ function ContactForm({matchesMD}) {
                 onChange={e=>{setMessage(e.target.value)}}/>
         </Grid>
         <Grid item container justify='center' style={{marginTop: '2em'}}>
-            <Button variant='contained' className={classes.sendBtn}>
+            <Button 
+                variant='contained' 
+                className={classes.sendBtn}
+                disabled={
+                    name.length ===0 ||
+                    email.length ===0 ||
+                    phone.length ===0 ||
+                    message.length ===0 ||
+                    emailHelper.length !==0 ||
+                    phoneHelper.length !== 0 
+                }
+                >
                 Send Message
                 <img src={airplane} alt="paper airplane" style={{marginLeft: '1em'}}/>
             </Button>
