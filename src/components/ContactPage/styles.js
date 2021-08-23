@@ -1,5 +1,6 @@
 import { makeStyles } from "@material-ui/core";
 import background from '../../assets/background.jpg'
+import mobileBackground from '../../assets/mobileBackground.jpg'
 
 export default makeStyles((theme)=>(
     {
@@ -11,14 +12,21 @@ export default makeStyles((theme)=>(
         height: '60em',
         width:"100%",
         marginTop: '-1em',
-        paddingBottom: '10em'
-      } ,
+        paddingBottom: '10em',
+        [theme.breakpoints.down('md')]:{
+          backgroundImage: `url(${mobileBackground})`,
+          marginTop: 0
+        }
+      },
+
       blueText:{
           color: theme.palette.common.blue
       },
+
       labelText:{
           fontSize: '1rem'
       },
+
       estimateBtn:{
         ...theme.typography.estimate,
         borderRadius: 50,
@@ -31,12 +39,12 @@ export default makeStyles((theme)=>(
         "&:hover":{
             backgroundColor: theme.palette.secondary.light
         },
-        [theme.breakpoints.down('sm')]:{
+        [theme.breakpoints.down('md')]:{
             marginRight: 0,
             marginLeft: 0,
             marginTop: '2em'
         }
-    },
+      },
 
       learnBtnServices:{
         ...theme.typography.learnMore,
@@ -44,7 +52,7 @@ export default makeStyles((theme)=>(
         padding: 10,
         height: 35,
         width: 110,
-        [theme.breakpoints.down('sm')]:{
+        [theme.breakpoints.down('md')]:{
             marginBottom: '2em'
         }
       },
@@ -65,6 +73,20 @@ export default makeStyles((theme)=>(
         "&:hover":{
           backgroundColor: theme.palette.secondary.light
         }
+      },
+
+      textfields:{
+        marginBottom: '0.8em'
+      },
+
+      contactGrid:{
+        [theme.breakpoints.down('md')]:{
+          marginBottom: '5em',
+          marginTop: '5em'
+        },
+        [theme.breakpoints.down('sm')]:{
+          marginTop: '1em'
+        },
       }
     
     }
