@@ -9,6 +9,8 @@ function ContactPage({setValue}) {
     const classes = useStyles();
     const theme = useTheme();
     const matchesMD = useMediaQuery(theme.breakpoints.down('md'));
+    const matchesSM = useMediaQuery(theme.breakpoints.down('sm'));
+    const matchesXS = useMediaQuery(theme.breakpoints.down('xs'));
 
     return (
         <Grid container>
@@ -26,7 +28,7 @@ function ContactPage({setValue}) {
                             <Typography variant='h2' align={matchesMD ? 'center' : undefined} style={{lineHeight: 1}}>Contact Us</Typography>
                             <Typography variant='body2' align={matchesMD ? 'center' : undefined} className={classes.blueText}>We are waiting.</Typography>
                         </Grid>
-                            <ContactForm matchesMD={matchesMD}/>
+                            <ContactForm matchesMD={matchesMD} matchesSM={matchesSM} matchesXS={matchesXS}/>
                     </Grid>
                 </Grid>
             </Grid>

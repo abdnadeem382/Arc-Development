@@ -72,6 +72,10 @@ export default makeStyles((theme)=>(
         backgroundColor: theme.palette.common.orange,
         "&:hover":{
           backgroundColor: theme.palette.secondary.light
+        },
+        [theme.breakpoints.down('sm')]:{
+          height: 40,
+          width: 225
         }
       },
 
