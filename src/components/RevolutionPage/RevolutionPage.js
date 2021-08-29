@@ -1,4 +1,5 @@
 import React, {useEffect} from 'react'
+import { useLocation } from 'react-router'
 import {Grid, Typography, useTheme, useMediaQuery} from '@material-ui/core'
 import useStyles from './styles'
 import Vision from './Vision'
@@ -17,11 +18,12 @@ import CallToAction from '../UI/CallToAction/CallToAction'
 function RevPage({setValue}) {
     const classes = useStyles();
     const theme = useTheme();
+    const {pathname} = useLocation();
     const matchesMD = useMediaQuery(theme.breakpoints.down('md'));
 
     useEffect(()=>{
         window.scrollTo(0, 0)
-    })
+    },[pathname])
 
     return (
         <Grid container direction='column'>

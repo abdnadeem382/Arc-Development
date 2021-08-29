@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useLocation } from 'react-router'
 import {Grid, Typography, useTheme, IconButton, useMediaQuery, Hidden} from '@material-ui/core'
 import SaveIcons from './SaveIcons'
 import DigitalDocs from './DigitalDocs'
@@ -15,8 +16,13 @@ import CallToAction from '../UI/CallToAction/CallToAction'
 function CustomSoftware({setSelectedIndex, setValue}) {
     const classes = useStyles();
     const theme= useTheme();
+    const {pathname} = useLocation();
     const matchesMD = useMediaQuery(theme.breakpoints.down('md'));
     const matchesXS = useMediaQuery(theme.breakpoints.down('xs'));
+
+    useEffect(()=>{
+        window.scrollTo(0,0)
+    },[pathname])
 
     return (
         <Grid container direction='column'>

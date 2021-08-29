@@ -1,4 +1,5 @@
 import React, {useEffect} from 'react'
+import {useLocation} from 'react-router-dom'
 import { Grid, Typography, useTheme, useMediaQuery } from '@material-ui/core'
 import useStyles from './styles'
 import History from './History';
@@ -7,11 +8,12 @@ import Team from './Team';
 function AboutUsPage() {
     const classes = useStyles();
     const theme = useTheme();
+    const {pathname} = useLocation();
     const matchesMD = useMediaQuery(theme.breakpoints.down('md'));
 
     useEffect(()=>{
         window.scrollTo(0, 0)
-    })
+    },[pathname])
 
     return (
         <Grid container direction='column'>
